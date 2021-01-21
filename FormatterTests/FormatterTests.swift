@@ -47,6 +47,6 @@ class FormatterTests: XCTestCase {
     
     func format(_ valueString: String) -> String {
         guard let value = Decimal(string: valueString) else { return "" }
-        return Formatter.format(value, locale: Locale(identifier: "en_US"))
+        return Formatter.string(from: value, locale: Locale(identifier: "en_US"))
     }
 }

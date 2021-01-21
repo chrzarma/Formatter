@@ -8,7 +8,7 @@
 import Foundation
 
 public final class Formatter {
-    public static func format(_ value: Decimal, locale: Locale) -> String {
+    public static func string(from value: Decimal, locale: Locale) -> String {
         let nf = NumberFormatter()
         nf.maximumFractionDigits = 2
         nf.minimumFractionDigits = 2
