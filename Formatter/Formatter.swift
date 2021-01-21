@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+func format(_ value: Decimal, locale: Locale) -> String {
+    let nf = NumberFormatter()
+    nf.maximumFractionDigits = 2
+    nf.locale = locale
+    
+    return nf.string(from: value as NSNumber) ?? ""
+}
