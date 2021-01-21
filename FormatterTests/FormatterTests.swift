@@ -31,6 +31,18 @@ class FormatterTests: XCTestCase {
         XCTAssertEqual(format("0.0000325103"), "0.000033")
     }
     
+    func test_roundsHalfUpValuesToTwoFractionDigits() {
+        XCTAssertEqual(format("1.005"), "1.01")
+        XCTAssertEqual(format("2.006"), "2.01")
+        XCTAssertEqual(format("3.007"), "3.01")
+        XCTAssertEqual(format("4.008"), "4.01")
+        XCTAssertEqual(format("5.009"), "5.01")
+        XCTAssertEqual(format("1.001"), "1.00")
+        XCTAssertEqual(format("2.002"), "2.00")
+        XCTAssertEqual(format("3.003"), "3.00")
+        XCTAssertEqual(format("4.004"), "4.00")
+    }
+    
     // MARK: Helpers
     
     func format(_ valueString: String) -> String {

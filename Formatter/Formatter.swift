@@ -12,6 +12,7 @@ public final class Formatter {
         let nf = NumberFormatter()
         nf.maximumFractionDigits = 2
         nf.minimumFractionDigits = 2
+        nf.roundingMode = .halfUp
         nf.locale = locale
 
         if value < 1 {
