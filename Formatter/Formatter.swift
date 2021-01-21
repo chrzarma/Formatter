@@ -13,5 +13,9 @@ func format(_ value: Decimal, locale: Locale) -> String {
     nf.minimumFractionDigits = 2
     nf.locale = locale
     
+    if value < 1 {
+        nf.maximumSignificantDigits = 2
+    }
+    
     return nf.string(from: value as NSNumber) ?? ""
 }
