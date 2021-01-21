@@ -15,4 +15,12 @@ class FormatterTests: XCTestCase {
         XCTAssertEqual(format(7.89, locale: Locale(identifier: "en_US")), "7.89")
         XCTAssertEqual(format(0.12, locale: Locale(identifier: "en_US")), "0.12")
     }
+    
+    func test_roundsValuesToTwoFractionDigits() {
+        XCTAssertEqual(format(1.234, locale: Locale(identifier: "en_US")), "1.23")
+        XCTAssertEqual(format(1.235, locale: Locale(identifier: "en_US")), "1.24")
+        XCTAssertEqual(format(1.236, locale: Locale(identifier: "en_US")), "1.24")
+        XCTAssertEqual(format(1.2300, locale: Locale(identifier: "en_US")), "1.23")
+        XCTAssertEqual(format(1.00023, locale: Locale(identifier: "en_US")), "1.00")
+    }
 }
